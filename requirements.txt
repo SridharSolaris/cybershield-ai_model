@@ -1,7 +1,7 @@
 numpy
 pandas
 joblib
-scikit-learn==0.24.2
+scikit-learn
 imbalanced-learn
 xgboost
 catboost
