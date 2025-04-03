@@ -1,6 +1,5 @@
 {
     "name": "Python 3",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
     "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
     "customizations": {
         "codespaces": {
@@ -19,9 +18,9 @@
             ]
         }
     },
-    "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user streamlit; echo '✅ Packages installed and Requirements met'",
+    "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user flask streamlit; echo '✅ Packages installed and Requirements met'",
     "postAttachCommand": {
-        "server": "python ./model/generate_synthetic_data.py && python train_model.py && flask run --host=0.0.0.0 --port=5001"
+        "server": "export FLASK_APP=app.py && python ./model/generate_synthetic_data.py && python train_model.py && flask run --host=0.0.0.0 --port=5001 --no-reload"
     },
     "portsAttributes": {
         "5001": {
