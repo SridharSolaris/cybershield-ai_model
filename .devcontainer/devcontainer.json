@@ -20,7 +20,7 @@
     },
     "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; pip3 install --user flask streamlit; echo '✅ Packages installed and Requirements met'",
     "postAttachCommand": {
-        "server": " echo '🔍 Checking running ports:' && export FLASK_APP=app.py && python ./model/generate_synthetic_data.py && python train_model.py && netstat -tulnp && lsof -i :8052 && flask run --host=0.0.0.0 --port=8052 --no-reload"
+        "server": " echo '🔍 Checking running ports:' && export FLASK_APP=app.py && python ./model/generate_synthetic_data.py && python train_model.py && netstat -tulnp && lsof -i :8052 && flask run --no-reload"
     },
     "portsAttributes": {
         "8052": {
