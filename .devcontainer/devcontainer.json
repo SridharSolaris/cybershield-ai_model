@@ -24,12 +24,12 @@
         "server": "python ./model/generate_synthetic_data.py && python train_model.py && python app.py"
     },
     "portsAttributes": {
-        "8501": {
+        "5001": {
             "label": "Application",
             "onAutoForward": "openPreview"
         }
     },
     "forwardPorts": [
-        8501
+        5001
     ]
 }
